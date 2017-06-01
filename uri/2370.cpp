@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define st first
+#define nd second
+#define mp make_pair
+#define pb push_back
+#define cl(x, v) memset((x), (v), sizeof(x))
+#define db(x) cerr << #x << " == " << x << endl
+#define dbs(x) cerr << x << endl
+#define _ << ", " <<
+
+typedef long long ll;
+typedef long double ld;
+typedef pair<int, int> pii;
+typedef pair<int, pii> piii;
+typedef pair<ll, ll> pll;
+typedef vector<int> vi;
+typedef vector<vi> vii;
+
+const int INF = 0x3f3f3f3f, MOD = 1e9+7, EPS = 1e-6, N = 1e3+10;
+
+int n, t, hab, cnt;
+char w[100], chr;
+vector <vector <string> > v(N);
+priority_queue <pair <int, string> > pq;
+
+int main () {
+    scanf("%d %d%c", &n, &t, &chr);
+    for (int i = 0; i < n; i++) {
+        scanf("%s %d%c", w, &hab, &chr);
+        pq.push(mp(hab, w));
+    }
+    while (!pq.empty()) {
+        v[cnt].pb(pq.top().nd); pq.pop();
+        cnt++; cnt %= t;
+    }
+    for (int i = 0; i < t; i++) {
+        printf("Time %d\n", i+1);
+        sort(v[i].begin(), v[i].end());
+        for (auto jog : v[i]) printf("%s\n", jog.c_str());
+        printf("\n");
+    }
+    return 0;
+}
