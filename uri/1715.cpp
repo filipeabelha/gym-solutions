@@ -1,18 +1,37 @@
 #include <bits/stdc++.h>
+using namespace std;
+
+#define st first
+#define nd second
+#define mp make_pair
+#define pb push_back
+#define cl(x, v) memset((x), (v), sizeof(x))
+#define db(x) cerr << #x << " == " << x << endl
+#define dbs(x) cerr << x << endl
+#define _ << ", " <<
+
+typedef long long ll;
+typedef long double ld;
+typedef pair<int, int> pii;
+typedef pair<int, pii> piii;
+typedef pair<ll, ll> pll;
+typedef vector<int> vi;
+typedef vector<vi> vii;
+
+const int INF = 0x3f3f3f3f, MOD = 1e9+7, EPS = 1e-6;
+
+int n, m, ans, x;
 
 int main () {
-    int n, m;
-    int sum = 0;
     scanf("%d%d", &n, &m);
     for (int i = 0; i < n; i++) {
-        int gols = 0;
+        int goal = 1;
         for (int j = 0; j < m; j++) {
-            int gol;
-            scanf("%d", &gol);
-            if (gol > 0) gols++;
-        };
-        if (gols >= m) sum++;
-    };
-    printf("%d\n", sum);
+            scanf("%d", &x);
+            if (!x) goal = 0;
+        }
+        if (goal) ans++;
+    }
+    printf("%d\n", ans);
     return 0;
 }
