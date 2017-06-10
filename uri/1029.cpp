@@ -1,25 +1,20 @@
 #include <bits/stdc++.h>
 
-int sum, n[50];
+int n, ch, f, x;
 
-int fib(int n) {
-        sum++;
-        if (n == 0) return 0;
-        else if (n == 1) return 1;
-        else {
-                return fib(n-1) + fib(n-2);
-        }
+int fib(int k) {
+    ch++;
+    if (k == 0 or k == 1) return k;
+    else return fib(k-1) + fib(k-2);
 }
 
 int main () {
-        int k;
-        scanf("%d", &k);
-        for (int i = 0; i < k; i++) {
-                scanf("%d", &n[i]);
-        }
-        for (int i = 0; i < k; i++) {
-                sum = 0;
-                printf("fib(%d) = %d calls = %d\n", n[i], sum - 1, fib(n[i]));
-        }        
-        return 0;
+    scanf("%d", &n);
+    while (n--) {
+        scanf("%d", &x);
+        ch = -1;
+        f = fib(x);
+        printf("fib(%d) = %d calls = %d\n", x, ch, f);
+    }
+    return 0;
 }
