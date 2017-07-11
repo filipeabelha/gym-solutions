@@ -30,7 +30,7 @@ int main () {
         for (int j, i=0; i < n; i++) scanf("%d", &j), a.pb(j);
         sort(a.begin(), a.end()); ans = 0;
         for (int i = 2; i < n; i += 2) ans += a[i-2]*a[i];
-        for (int i = 1; i < n; i += 2) ans += a[i-2]*a[i];
+        for (int i = 3; i < n; i += 2) ans += a[i-2]*a[i];
         ans += a[0]*a[1];
         ans += a[n-1]*a[n-2];
         printf("%.3Lf\n", ans*0.5*sin(2*PI/n));
