@@ -9,3 +9,4 @@ Here are my accepted solutions to some online judges problems.
 - [SPOJ Brazil](http://br.spoj.com)
 - [URI](http://www.urionlinejudge.com.br/)
 - [UVa](http://uva.onlinejudge.org)
+- [Yandex](https://contest.yandex.com)
