@@ -23,21 +23,30 @@ const ll LINF = 0x3f3f3f3f3f3f3f3f, LMOD = 1011112131415161719ll;
 const int INF = 0x3f3f3f3f, MOD = 1e9+7;
 const int N = 1e5+5;
 
-int n, a, b, vis[N], sz[N], f[N];
+int n, a, b, vis[N], sz[N], f[N], tot;
 vi adj[N], cent, lea[N];
 
 void dfs (int u) {
     bool ok = true;
-    sz[u] = 1;
+    sz[u] = (adj[u].size() == 1);
 
     for (auto v : adj[u]) if (!vis[v]) {
         vis[v] = 1;
         dfs(v);
         sz[u] += sz[v];
-        if (2*sz[v] > n) ok = false;
+        if (2*sz[v] > tot) ok = false;
     }
 
-    if (ok and 2*(n-sz[u]) <= n) cent.pb(u);
+    if (ok and 2*(tot-sz[u]) <= tot) cent.pb(u);
+}
+
+void cnttot (int u) {
+    if (vis[u]) return;
+    vis[u] = 1;
+
+    if (adj[u].size() == 1) tot++;
+
+    for (auto v : adj[u]) cnttot(v);
 }
 
 void cnt (int u, int s) {
@@ -62,10 +71,11 @@ int main () {
         adj[a].pb(b);
         adj[b].pb(a);
     }
-    for (int i = 1; i <= n; i++) if (!vis[i]) {
-        vis[i] = 1;
-        dfs(i);
-    }
+
+    cnttot(1);
+    cl(vis, 0);
+    vis[1] = 1;
+    dfs(1);
 
     cl(vis, 0);
     int c = cent[0];
