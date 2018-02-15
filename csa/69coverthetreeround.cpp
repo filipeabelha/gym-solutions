@@ -66,6 +66,7 @@ int main () {
         vis[i] = 1;
         dfs(i);
     }
+
     cl(vis, 0);
     int c = cent[0];
     vis[c] = 1;
