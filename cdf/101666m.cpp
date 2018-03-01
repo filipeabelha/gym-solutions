@@ -59,7 +59,6 @@ int main () {
         else            e = -z.y;
 
         if (lis.empty() or e >= lis.back()) lis.pb(e);
-        else if (e < lis[0]) lis[0] = e;
         else {
             int pos = upper_bound(lis.begin(), lis.end(), e) - lis.begin();
             lis[pos] = e;
