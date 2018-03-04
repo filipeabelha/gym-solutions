@@ -21,7 +21,7 @@ typedef vector<vi> vii;
 const ld EPS = 1e-9, PI = acos(-1.);
 const ll LINF = 0x3f3f3f3f3f3f3f3f, LMOD = 1011112131415161719ll;
 const int INF = 0x3f3f3f3f, MOD = 1e9+7;
-const int N = 5e3+5;
+const int N = 1e5+5;
 
 string s;
 ld ans, p[30];
