@@ -24,7 +24,7 @@ const int INF = 0x3f3f3f3f, MOD = 1e9+7;
 const int N = 1e5+5;
 
 pii st[4*N];
-int v[N], lazy[4*N];
+int v[N];
 
 void build (int p, int l, int r) {
     if (l == r) {
