@@ -53,21 +53,14 @@ int main () {
             } else ok = 0;
         }
     }
-    int i;
-    int e = 0;
-    for (i = 0; ; i++) {
-        if (z[i].empty()) break;
-        if (z[i].size() % 2 == 0) e++;
-    }
-    if (ev.size()) printf("-1\n");
-    else if (ok and i-e > 0) {
-        printf("%d\n", i-e);
-        for (int j = 0; j < i; j++) {
-            if (z[j].size() % 2 == 0) continue;
+    if (ev.size() or !ok) printf("-1\n");
+    else {
+        printf("%d\n", cnt);
+        for (int j = 0; j < cnt; j++) {
             printf("%d ", (int) z[j].size());
             for (auto x : z[j]) printf("%d ", x);
             printf("\n");
         }
-    } else printf("-1\n");
+    }
     return 0;
 }
