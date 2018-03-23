@@ -9,7 +9,6 @@ using namespace std;
 #define db(x) cerr << #x << " == " << x << endl
 #define dbs(x) cerr << x << endl
 #define _ << ", " <<
-#define gcd(x, y) __gcd((x), (y))
 
 typedef long long ll;
 typedef long double ld;
@@ -24,23 +23,16 @@ const ll LINF = 0x3f3f3f3f3f3f3f3f, LMOD = 1011112131415161719ll;
 const int INF = 0x3f3f3f3f, MOD = 1e9+7;
 const int N = 1e5+5;
 
-queue <pii> q;
-int n, m, x;
+int n, v[N];
+ll x, a, b;
 
 int main () {
-    scanf("%d%d", &n, &m);
+    scanf("%d", &n);
     for (int i = 1; i <= n; i++) {
-        scanf("%d", &x);
-        q.push({x, i});
+        scanf("%d", &v[i]);
+        if (v[i] >= 0) a += v[i];
+        else b += v[i];
     }
-    while (q.size()) {
-        pii p = q.front(); q.pop();
-        if (!q.size()) {
-            printf("%d\n", p.nd);
-            break;
-        }
-        p.st = max(p.st-m, 0);
-        if (p.st) q.push(p);
-    }
+    printf("%d\n", abs(a-b));
     return 0;
 }
