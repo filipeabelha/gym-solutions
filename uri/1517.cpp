@@ -43,7 +43,7 @@ int main () {
         }
         scanf("%d%d", &x, &y);
         dp[x][y][0] = 0;
-        for (int t = 0; t < K; t++)
+        for (int t = 1; t < K; t++)
             for (int i = 1; i <= n; i++)
                 for (int j = 1; j <= m; j++) {
                     int mx = 0;
