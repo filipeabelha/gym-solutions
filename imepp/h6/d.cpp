@@ -46,7 +46,6 @@ int main () {
         for (int t = 1; t < K; t++)
             for (int i = 1; i <= n; i++)
                 for (int j = 1; j <= m; j++) {
-                    int mx = 0;
                     for (int z = 0; z < 9; z++) {
                         int x = i+dx[z];
                         int y = j+dy[z];
