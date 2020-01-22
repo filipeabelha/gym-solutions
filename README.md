@@ -8,6 +8,7 @@ Here are my accepted solutions to some online judges problems.
 - [CSAcademy](https://csacademy.com/)
 - [HackerEarth](https://www.hackerearth.com/)
 - [HackerRank](https://www.hackerrank.com)
+- [Kattis](https://open.kattis.com/problems)
 - [OIOIOI](https://sio2.mimuw.edu.pl/)
 - [SPOJ](http://www.spoj.com)
 - [SPOJ Brazil](http://br.spoj.com)
