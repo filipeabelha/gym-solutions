@@ -12,6 +12,7 @@ Here are my accepted solutions to some online judges problems.
 - [OIOIOI](https://sio2.mimuw.edu.pl/)
 - [SPOJ](http://www.spoj.com)
 - [SPOJ Brazil](http://br.spoj.com)
+- [Szkopul](https://szkopul.edu.pl)
 - [URI](http://www.urionlinejudge.com.br/)
 - [UVa](http://uva.onlinejudge.org)
 - [Yandex](https://contest.yandex.com)
