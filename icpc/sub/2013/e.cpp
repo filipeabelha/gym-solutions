@@ -29,11 +29,25 @@ const ll LINF = 0x3f3f3f3f3f3f3f3f, LMOD = 1011112131415161719ll;
 const int INF = 0x3f3f3f3f, MOD = 1e9+7;
 const int N = 1e5+5;
 
-int a, b, c;
+int ret[N], n, r, x;
 
 int main () {
-    scanf("%d%d%d", &a, &b, &c);
-    printf("%c\n", (a == b and a == c) ? '*' : a == b ? 'C' : a == c ? 'B' : 'A');
+    scanf("%d%d", &n, &r);
+    while (r--) {
+        scanf("%d", &x);
+        ret[x] = 1;
+    }
+
+    int ok = 0;
+    for (int i = 1; i <= n; i++) {
+        if (!ret[i]) {
+            printf("%d ", i);
+            ok = 1;
+        }
+    }
+
+    if (!ok) printf("*");
+    printf("\n");
 
     return 0;
 }
